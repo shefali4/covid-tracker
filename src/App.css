@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.spaced {
+  margin-top: 2rem;
+}

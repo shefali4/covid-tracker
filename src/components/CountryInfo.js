@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Table} from "react-bootstrap"
 class CountryInfo extends Component {
     state = {
         countryData: null
@@ -36,12 +36,24 @@ class CountryInfo extends Component {
 
         const { Country, Confirmed, Deaths, Recovered } = this.state.countryData;
         return (
-            <div>
-                <h3><i>{Country}</i></h3>
-                <p>Confirmed cases: {Confirmed}</p>
-                <p>Deaths: {Deaths}</p>
-                <p>Recovered: {Recovered}</p>
-            </div>
+            <Table className = "spaced" striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Confirmed cases</th>
+                        <th>Deaths</th>
+                        <th>Recovered</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{Country}</td>
+                        <td>{Confirmed}</td>
+                        <td>{Deaths}</td>
+                        <td>{Recovered}</td>
+                    </tr>
+                </tbody>
+            </Table>
         );
     }
 }
